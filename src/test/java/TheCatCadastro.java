@@ -1,9 +1,8 @@
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.containsString;
-
 import io.restassured.matcher.RestAssuredMatchers.*;
 import org.hamcrest.Matchers.*;
-import org.junit.Test;
+import org.junit.*;
 
 public class TheCatCadastro {
     @Test

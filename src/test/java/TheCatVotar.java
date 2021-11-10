@@ -1,13 +1,10 @@
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-
 import io.restassured.matcher.RestAssuredMatchers.*;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import org.junit.*;
 
 public class TheCatVotar {
     String idvotacao;
