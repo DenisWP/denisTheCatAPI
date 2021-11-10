@@ -4,11 +4,18 @@ import static org.hamcrest.Matchers.*;
 import io.restassured.matcher.RestAssuredMatchers.*;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 
 public class theCatVotar {
     String idvotacao;
+
+    @BeforeClass
+    public static void apiURL(){
+        baseURI = "https://api.thecatapi.com/v1";
+    }
 
     //Chave: d5a319b2-705a-4542-aa64-867d2568a9e9
 
@@ -19,7 +26,7 @@ public class theCatVotar {
                         .header("x-api-key","81e6f295-3024-49c2-a0a2-d336473ac4ba")
                         .body("{\"image_id\": \"asf2\",\"sub_id\": \"my-user-1234\",\"value\": 1}")
                     .when()
-                         .post("https://api.thecatapi.com/v1/votes")
+                         .post("/votes")
                     .then()
                         .statusCode(200)
                         .body("message", is("SUCCESS"))
@@ -33,7 +40,7 @@ public class theCatVotar {
                     given()
                         .header("x-api-key","81e6f295-3024-49c2-a0a2-d336473ac4ba")
                     .when()
-                        .get("https://api.thecatapi.com/v1/votes");
+                        .get("/votes");
                     response.then()
                         .log().all()
                         .body("image_id", hasItems("asf2"));
@@ -52,7 +59,7 @@ public class theCatVotar {
                             .header("x-api-key","81e6f295-3024-49c2-a0a2-d336473ac4ba")
                             .pathParam("vote_id",idvotacao)
                     .when()
-                            .delete("https://api.thecatapi.com/v1/votes/{vote_id}")
+                            .delete("/votes/{vote_id}")
                     .then()
                         //.statusCode(200)
                         .log().all();
