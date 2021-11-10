@@ -27,6 +27,7 @@ public class theCarCadastro {
                     .post("https://api.thecatapi.com/v1/user/passwordlesssignup")
                 .then()
                         .log().all()
+                        //Validar se está apresentando a mensagem de email obrigatório, quando não enviar no body
                         .body("message", containsString ("\"email\" is required") )
                         .statusCode(400);
     }
