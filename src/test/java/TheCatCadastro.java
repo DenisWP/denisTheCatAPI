@@ -5,7 +5,7 @@ import io.restassured.matcher.RestAssuredMatchers.*;
 import org.hamcrest.Matchers.*;
 import org.junit.Test;
 
-public class theCarCadastro {
+public class TheCatCadastro {
     @Test
     public void thecatCadastro (){
                 given()
