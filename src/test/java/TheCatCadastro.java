@@ -4,6 +4,12 @@ import io.restassured.matcher.RestAssuredMatchers.*;
 import org.hamcrest.Matchers.*;
 import org.junit.*;
 
+import javax.imageio.IIOException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class TheCatCadastro {
     @Test
     public void thecatCadastro (){
@@ -31,4 +37,11 @@ public class TheCatCadastro {
                         .statusCode(400);
     }
 
+    @Test
+    public String lerJson(String caminhoJson) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(caminhoJson)));
+    }
+
+    @Test
+   
 }
