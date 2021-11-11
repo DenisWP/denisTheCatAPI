@@ -1,9 +1,6 @@
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-import io.restassured.matcher.RestAssuredMatchers.*;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers.*;
-import org.junit.Before;
 import org.junit.*;
 
 public class TheCatVotar {
@@ -13,8 +10,6 @@ public class TheCatVotar {
     public static void apiURL(){
         baseURI = "https://api.thecatapi.com/v1";
     }
-
-    //Chave: d5a319b2-705a-4542-aa64-867d2568a9e9
 
     @Test
     public void createVotes (){

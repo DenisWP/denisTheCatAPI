@@ -1,14 +1,10 @@
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.containsString;
-import io.restassured.matcher.RestAssuredMatchers.*;
-import org.hamcrest.Matchers.*;
 import org.junit.*;
-
-import javax.imageio.IIOException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+
+
 
 public class TheCatCadastro {
     String uri =  "https://api.thecatapi.com/v1/user/passwordlesssignup";
